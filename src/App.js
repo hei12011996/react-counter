@@ -3,9 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  state = {number: 0};
+  state = {number: this.props.defaultNumber};
   updateNumber = () => {
-    this.setState({number: 1});
+    this.setState({number: ++this.state.number});
   }
 
   render() {
