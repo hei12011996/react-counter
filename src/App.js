@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
   state = {number: this.props.defaultNumber};
   updateNumber = () => {
-    this.setState({number: ++this.state.number});
+    this.setState({number: this.props.onClickFunc(this.state.number)});
   }
 
   render() {
