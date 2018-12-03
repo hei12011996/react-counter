@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Number from './components/Number.js';
 
 class App extends Component {
-  state = {number: this.props.defaultNumber};
+  state = {number: <Number numberValue={this.props.defaultNumber} />, counter: this.props.defaultNumber};
   updateNumber = () => {
-    this.setState({number: this.props.onClickFunc(this.state.number)});
+    this.state.counter = this.props.onClickFunc(this.state.counter);
+    this.setState({number: <Number numberValue={this.state.counter} />, counter: this.state.counter});
   }
 
   render() {
@@ -14,9 +16,7 @@ class App extends Component {
         <button onClick={this.updateNumber}>
           Hello world!
         </button>
-        <span>
-          number: {this.state.number}
-        </span>
+        {this.state.number}
       </div>
     );
   }
