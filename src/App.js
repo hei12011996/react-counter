@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button>
+        <button onClick={function(){alert('now you know how to handle onclick event')}}>
           Hello world!
         </button>
         <span>
